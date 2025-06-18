@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-gray-800 bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display leading-tight;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary-500 text-primary-900 hover:bg-secondary-600 focus:ring-secondary-500;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-primary-500 text-primary-500 bg-transparent hover:bg-primary-500 hover:text-white focus:ring-primary-500;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .property-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-property transition-all duration-300 hover:shadow-property-hover;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-primary-500;
+  }
+  
+  .section-subheading {
+    @apply text-xl md:text-2xl font-medium mb-12 text-gray-600 max-w-3xl;
+  }
+}
+
+/* Slick slider custom styles */
+.slick-prev, .slick-next {
+  @apply z-10 w-10 h-10;
+}
+
+.slick-prev:before, .slick-next:before {
+  @apply text-white text-2xl opacity-90 drop-shadow-md;
+}
+
+.slick-dots li button:before {
+  @apply text-white opacity-75;
+}
+
+.slick-dots li.slick-active button:before {
+  @apply text-secondary-500 opacity-100;
+}
